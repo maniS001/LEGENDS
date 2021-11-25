@@ -1,18 +1,21 @@
 {%load static %}
 
 <img src="{% static '\img\Albert.jpg' %}" alt="" width=100%>
-<h1><a href="LEADERS/login">LOGIN</a></h1>
+<h1><a href="login">LOGIN</a></h1>
 <br><br><br><br>
 <hr>
-<a href="login.html" target=_blank> </a>
+{%load admin_urls%}
+
+
+
 
 
 {%for i in t%}
     period:{{i.period}} <br>
-    <br> 
     
-    <a href="{% url 'details'  %}? data='mani'>{{i.name}}</a>
-    <img src="{{i.image.url}}" alt="km" width="260" height="194">
+    <br> 
+  <h1><a href='HISTORY\{{i.name}}'>{{i.name}}</a></h1><br>
+    <img src="{{i.image.url}}" alt="km" width="260" height="194"><br>
     
     <h2>nickname:{{i.nickname}}</h2> <br>
     rank:{{i.rank}} <br>
